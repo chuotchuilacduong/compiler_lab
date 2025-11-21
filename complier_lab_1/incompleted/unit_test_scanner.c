@@ -9,7 +9,6 @@
 #include <stddef.h>
 #include <setjmp.h>
 #include <cmocka.h>
-
 #include <stdio.h>
 #include <stdlib.h>
 // 
@@ -98,10 +97,31 @@ static void test_input2(void **state) {
 static void test_input3(void **state) {
     (void) state; /* unused */
     test_scan("../test/example3.kpl", "../test/result3.txt");
-    // assert_true(currentChar == EOF);
-    assert_true(1);
+    assert_true(currentChar == EOF);
+}
+static void test_input4(void **state) {
+    (void) state; /* unused */
+    test_scan("../test/example4.kpl", "../test/result4.txt");
+    // assert_true(currentChar == EOF); 
 }
 
+static void test_input5(void **state) {
+    (void) state; /* unused */
+    test_scan("../test/example5.kpl", "../test/result5.txt");
+    // assert_true(currentChar == EOF);
+}
+
+static void test_input6(void **state) {
+    (void) state; /* unused */
+    test_scan("../test/example6.kpl", "../test/result6.txt");
+    // assert_true(currentChar == EOF);
+}
+
+static void test_input7(void **state) {
+    (void) state; /* unused */
+    test_scan("../test/example7.kpl", "../test/result7.txt");
+    // assert_true(currentChar == EOF);
+}
 // static void test_input1(void **state) { (void)state; assert_true(1); }
 // static void test_input2(void **state) { (void)state; assert_true(1); }
 // static void test_input3(void **state) { (void)state; assert_true(1); }
@@ -114,6 +134,10 @@ int main(void) {
         cmocka_unit_test(test_input1),
         cmocka_unit_test(test_input2),
         cmocka_unit_test(test_input3),
+        cmocka_unit_test(test_input4),
+        cmocka_unit_test(test_input5),
+        cmocka_unit_test(test_input6),
+        cmocka_unit_test(test_input7),
         cmocka_unit_test(null_test_success),
         cmocka_unit_test(test_EOF),
     };

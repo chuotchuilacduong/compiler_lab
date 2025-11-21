@@ -33,10 +33,12 @@ void skipComment() {
         readChar();
         if (currentChar == -1) { 
             error(ERR_ENDOFCOMMENT, lineNo, colNo); 
+            return;
         } else if (charCodes[currentChar] == CHAR_TIMES) { 
             readChar(); 
             if (currentChar == -1) { 
                 error(ERR_ENDOFCOMMENT, lineNo, colNo); 
+                return;
             } else if (charCodes[currentChar] == CHAR_RPAR) { 
                 readChar();
                 return;
@@ -310,6 +312,5 @@ int main(int argc, char *argv[]) {
     
   return 0;
 }
-
 
 
